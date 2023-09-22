@@ -1,3 +1,5 @@
+install [Node.js](https://nodejs.org/en/download/current "download Node.js")
+
 ```npm
 node -v
 ```
@@ -17,7 +19,6 @@ npm install @types/node --save-dev
 ```
 npx tsc --init--rootDirsrc--outDir lib --esModuleInterop--resolveJsonModule--lib esnext,dom --module commonjs
 ```
-
 
 open tsconfig.json，add include files and exclude
 
@@ -66,7 +67,6 @@ fs.writeFile(path, data, encoding, error => {
 });
 ```
 
-
 install vue3:
 
 ```
@@ -77,4 +77,8 @@ To install Vue CLI, use npm. You must use the `-g` flag to globally install in o
 
 ```
 npm install -g @vue/cli
+```
+
+```
+npm init vue@latest
 ```
