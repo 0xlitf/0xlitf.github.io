@@ -1,84 +1,52 @@
-install [Node.js](https://nodejs.org/en/download/current "download Node.js")
+# vue-project
 
-```npm
-node -v
-```
+This template should help get you started developing with Vue 3 in Vite.
 
-```
-npm init -y
-```
+## Recommended IDE Setup
 
-```
-npm install typescript --save-dev
-```
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-```
-npm install @types/node --save-dev
-```
+## Type Support for `.vue` Imports in TS
 
-```
-npx tsc --init--rootDirsrc--outDir lib --esModuleInterop--resolveJsonModule--lib esnext,dom --module commonjs
-```
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-open tsconfig.json，add include files and exclude
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
-```
-  "include": ["src/**/*"],
-  "files": ["src/index.ts"],
-  "exclude": ["node_modules"]
-```
+1. Disable the built-in TypeScript Extension
+    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
-set `ts-node` and  `nodemon` to compile and run in real time, and listen modify:
+## Customize configuration
 
-```
-npm install --save-dev ts-node
-npm install --save-dev nodemon
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
 ```
 
-open `package.json` to add npm script:
+### Compile and Hot-Reload for Development
 
-```
-"scripts": {
-    "start": "npm run build:live",
-    "build": "tsc -p .",
-    "build:live": "nodemon --watch src/**/*.ts --exec ts-node src/index.ts"
-},
+```sh
+npm run dev
 ```
 
-```
-npm run start
-```
+### Type-Check, Compile and Minify for Production
 
-in `index.ts`:
-
-```
-import * as fs from "fs";
-
-const path = "./message.txt";
-const data = "Hello World!";
-const encoding = "utf8";
-
-console.log(data);
-
-fs.writeFile(path, data, encoding, error => {
-    if (error) {
-        console.log(error);
-    }
-});
+```sh
+npm run build
 ```
 
-install vue3:
+### Run Unit Tests with [Vitest](https://vitest.dev/)
 
-```
-npm install -g vue@next
-```
-
-To install Vue CLI, use npm. You must use the `-g` flag to globally install in order to upgrade (`vue upgrade --next`):
-
-```
-npm install -g @vue/cli
+```sh
+npm run test:unit
 ```
 
-```
-npm init vue@latest
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
 ```
