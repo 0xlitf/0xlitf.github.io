@@ -65,3 +65,16 @@ fs.writeFile(path, data, encoding, error => {
     }
 });
 ```
+
+
+install vue3:
+
+```
+npm install -g vue@next
+```
+
+To install Vue CLI, use npm. You must use the `-g` flag to globally install in order to upgrade (`vue upgrade --next`):
+
+```
+npm install -g @vue/cli
+```
