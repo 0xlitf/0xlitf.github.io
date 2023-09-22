@@ -1,13 +1,23 @@
-npm -v
+```npm
 node -v
+```
 
+```
 npm init -y
+```
 
+```
 npm install typescript --save-dev
+```
 
+```
 npm install @types/node --save-dev
+```
 
+```
 npx tsc --init--rootDirsrc--outDir lib --esModuleInterop--resolveJsonModule--lib esnext,dom --module commonjs
+```
+
 
 open tsconfig.json，add include files and exclude
 
@@ -16,7 +26,6 @@ open tsconfig.json，add include files and exclude
   "files": ["src/index.ts"],
   "exclude": ["node_modules"]
 ```
-
 
 set `ts-node` and  `nodemon` to compile and run in real time, and listen modify:
 
@@ -35,13 +44,11 @@ open `package.json` to add npm script:
 },
 ```
 
-
-
 ```
 npm run start
 ```
 
-in index.ts:
+in `index.ts`:
 
 ```
 import * as fs from "fs";
