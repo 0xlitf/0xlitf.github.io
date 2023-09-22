@@ -82,3 +82,15 @@ npm install -g @vue/cli
 ```
 npm init vue@latest
 ```
+
+```
+npm install --legacy-peer-deps
+```
+
+```
+npm run build
+```
+
+```
+npm run build
+```
